@@ -1,596 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shubham Maloo - CA Student & Finance Professional</title>
-    <meta
-      name="description"
-      content="Dedicated CA student with strong foundation in accounting, taxation, and financial management. Seeking articleship opportunities."
-    />
-    <meta
-      name="keywords"
-      content="CA Student, CA Inter Passed, Chartered Accountant, Web Developer, Portfolio"
-    />
-
-    <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="Shubham Maloo - CA Student & Finance Professional"
-    />
-    <meta
-      property="og:description"
-      content="Dedicated CA student seeking articleship opportunities with expertise in accounting and finance."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://about.shubhammaloo.xyz" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="icon" href="assets/profile.png" type="image/x-icon" />
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --primary: #1e40af;
-        --secondary: #3b82f6;
-        --accent: #f59e0b;
-        --success: #10b981;
-        --dark: #0f172a;
-        --light: #f8fafc;
-        --gray: #64748b;
-        --white: #ffffff;
-        --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-
-      body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        line-height: 1.6;
-        color: var(--dark);
-        background: var(--light);
-        overflow-x: hidden;
-      }
-
-      /* Hero Section */
-      .hero {
-        min-height: 100vh;
-        background: var(--gradient);
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        animation: float 20s ease-in-out infinite;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        color: white;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 700;
-        margin-bottom: 1rem;
-        opacity: 0;
-        animation: slideUp 1s ease-out 0.5s forwards;
-      }
-
-      .hero .subtitle {
-        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-        margin-bottom: 2rem;
-        opacity: 0.9;
-        opacity: 0;
-        animation: slideUp 1s ease-out 0.7s forwards;
-      }
-
-      .contact-info {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 3rem;
-        flex-wrap: wrap;
-        opacity: 0;
-        animation: slideUp 1s ease-out 0.9s forwards;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.75rem 1.5rem;
-        border-radius: 50px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .cta-button {
-        display: inline-block;
-        background: var(--accent);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        opacity: 0;
-        animation: slideUp 1s ease-out 1.1s forwards;
-      }
-
-      .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
-      }
-
-      /* Navigation */
-      .nav {
-        position: fixed;
-        top: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        border-radius: 50px;
-        padding: 1rem 2rem;
-        z-index: 1000;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        opacity: 0;
-        animation: slideDown 1s ease-out 1.3s forwards;
-      }
-
-      .nav ul {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      .nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .nav a:hover {
-        color: var(--accent);
-      }
-
-      /* Main Content */
-      .main-content {
-        padding: 5rem 0;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-
-      .section {
-        margin-bottom: 5rem;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-      }
-
-      .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        text-align: center;
-        margin-bottom: 3rem;
-        position: relative;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -0.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background: var(--gradient);
-        border-radius: 2px;
-      }
-
-      /* About Section */
-      .about-content {
-        background: white;
-        padding: 3rem;
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-        text-align: center;
-        font-size: 1.2rem;
-        line-height: 1.8;
-        color: var(--gray);
-      }
-
-      /* Academics Grid */
-      .academics-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-      }
-
-      .academic-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-top: 4px solid var(--secondary);
-      }
-
-      .academic-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      }
-
-      .academic-card h3 {
-        color: var(--primary);
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .academic-card .year {
-        color: var(--accent);
-        font-weight: 600;
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-      }
-
-      .academic-card p {
-        color: var(--gray);
-        line-height: 1.6;
-      }
-
-      /* Skills Section */
-      .skills-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .skill-category {
-        background: white;
-        padding: 2rem;
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-      }
-
-      .skill-category h3 {
-        color: var(--primary);
-        margin-bottom: 1.5rem;
-        font-size: 1.3rem;
-      }
-
-      .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .skill-tag {
-        background: var(--light);
-        color: var(--dark);
-        padding: 0.5rem 1rem;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-      }
-
-      .skill-tag:hover {
-        border-color: var(--secondary);
-        background: var(--secondary);
-        color: white;
-      }
-
-      .coding-projects {
-        text-align: center;
-        margin-top: 2rem;
-      }
-
-      .project-link {
-        display: inline-block;
-        background: var(--gradient);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: transform 0.3s ease;
-      }
-
-      .project-link:hover {
-        transform: scale(1.05);
-      }
-
-      /* Achievements */
-      .achievements-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .achievement-item {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: var(--shadow);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        transition: transform 0.3s ease;
-      }
-
-      .achievement-item:hover {
-        transform: translateX(10px);
-      }
-
-      .achievement-icon {
-        background: var(--success);
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      /* Hobbies */
-      .hobbies-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-      }
-
-      .hobby-item {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: var(--shadow);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        transition: transform 0.3s ease;
-        min-width: 200px;
-      }
-
-      .hobby-item:hover {
-        transform: scale(1.05);
-      }
-
-      .hobby-icon {
-        background: var(--gradient);
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Footer */
-      .footer {
-        background: var(--dark);
-        color: white;
-        padding: 3rem 0 2rem;
-        text-align: center;
-      }
-
-      .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .social-link {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .social-link:hover {
-        background: var(--secondary);
-        transform: translateY(-5px);
-      }
-
-      /* Back to Top */
-      .back-to-top {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        background: var(--gradient);
-        color: white;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: var(--shadow);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-      }
-
-      .back-to-top.visible {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .back-to-top:hover {
-        transform: translateY(-5px);
-      }
-
-      /* Animations */
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateX(-50%) translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(-50%) translateY(0);
-        }
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .nav {
-          display: none;
-        }
-
-        .contact-info {
-          flex-direction: column;
-          align-items: center;
-          gap: 1rem;
-        }
-
-        .academics-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .skills-container {
-          grid-template-columns: 1fr;
-        }
-
-        .main-content {
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
-
-        .section {
-          margin-bottom: 3rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .academic-card,
-        .skill-category,
-        .about-content {
-          padding: 1.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="nav">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#academics">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-      </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Shubham Maloo</h1>
-        <p class="subtitle">CA Student & Aspiring Finance Professional</p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>shubhammaloo0712@gmail.com</span>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Mumbai, India</span>
-          </div>
-        </div>
-        <a href="#about" class="cta-button">Explore My Journey</a>
-      </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- About Section -->
-      <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <p>
-            Seeking an Articleship position in a prestigious firm to gain
-            practical exposure, enhance technical skills and contribute to the
-            firm's success. Committed to delivering high quality work,
-            continuous learning and growth.
-          </p>
-
-          <!-- <p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shubham Maloo - CA Student & Finance Professional</title>
+        <meta
+            name="description"
+            content="Dedicated CA student with strong foundation in accounting, taxation, and financial management. Seeking articleship opportunities."
+        />
+        <meta
+            name="keywords"
+            content="CA Student, CA Inter Passed, Chartered Accountant, Web Developer, Portfolio"
+        />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Shubham Maloo - CA Student & Finance Professional" />
+        <meta
+            property="og:description"
+            content="Dedicated CA student seeking articleship opportunities with expertise in accounting and finance."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://about.shubhammaloo.xyz" />
+        <meta property="og:image" content="https://about.shubhammaloo.xyz/assets/profile.png" />
+        <meta property="og:logo" content="https://about.shubhammaloo.xyz/assets/profile.png" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="icon" href="assets/profile.png" type="image/x-icon" />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --primary: #1e40af;
+                --secondary: #3b82f6;
+                --accent: #f59e0b;
+                --success: #10b981;
+                --dark: #0f172a;
+                --light: #f8fafc;
+                --gray: #64748b;
+                --white: #ffffff;
+                --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                line-height: 1.6;
+                color: var(--dark);
+                background: var(--light);
+                overflow-x: hidden;
+            }
+
+            /* Hero Section */
+            .hero {
+                min-height: 100vh;
+                background: var(--gradient);
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+                animation: float 20s ease-in-out infinite;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+                color: white;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+                font-weight: 700;
+                margin-bottom: 1rem;
+                opacity: 0;
+                animation: slideUp 1s ease-out 0.5s forwards;
+            }
+
+            .hero .subtitle {
+                font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+                margin-bottom: 2rem;
+                opacity: 0.9;
+                opacity: 0;
+                animation: slideUp 1s ease-out 0.7s forwards;
+            }
+
+            .contact-info {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin-bottom: 3rem;
+                flex-wrap: wrap;
+                opacity: 0;
+                animation: slideUp 1s ease-out 0.9s forwards;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 0.75rem 1.5rem;
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .cta-button {
+                display: inline-block;
+                background: var(--accent);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                opacity: 0;
+                animation: slideUp 1s ease-out 1.1s forwards;
+            }
+
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+            }
+
+            /* Navigation */
+            .nav {
+                position: fixed;
+                top: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border-radius: 50px;
+                padding: 1rem 2rem;
+                z-index: 1000;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                opacity: 0;
+                animation: slideDown 1s ease-out 1.3s forwards;
+            }
+
+            .nav ul {
+                display: flex;
+                list-style: none;
+                gap: 2rem;
+            }
+
+            .nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            .nav a:hover {
+                color: var(--accent);
+            }
+
+            /* Main Content */
+            .main-content {
+                padding: 5rem 0;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .section {
+                margin-bottom: 5rem;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.6s ease;
+            }
+
+            .section.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 3rem;
+                position: relative;
+            }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -0.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                background: var(--gradient);
+                border-radius: 2px;
+            }
+
+            /* About Section */
+            .about-content {
+                background: white;
+                padding: 3rem;
+                border-radius: 20px;
+                box-shadow: var(--shadow);
+                text-align: center;
+                font-size: 1.2rem;
+                line-height: 1.8;
+                color: var(--gray);
+            }
+
+            /* Academics Grid */
+            .academics-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+            }
+
+            .academic-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: var(--shadow);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border-top: 4px solid var(--secondary);
+            }
+
+            .academic-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+
+            .academic-card h3 {
+                color: var(--primary);
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .academic-card .year {
+                color: var(--accent);
+                font-weight: 600;
+                margin-bottom: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .academic-card p {
+                color: var(--gray);
+                line-height: 1.6;
+            }
+
+            /* Skills Section */
+            .skills-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+
+            .skill-category {
+                background: white;
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            .skill-category h3 {
+                color: var(--primary);
+                margin-bottom: 1.5rem;
+                font-size: 1.3rem;
+            }
+
+            .skills-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .skill-tag {
+                background: var(--light);
+                color: var(--dark);
+                padding: 0.5rem 1rem;
+                border-radius: 25px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+            }
+
+            .skill-tag:hover {
+                border-color: var(--secondary);
+                background: var(--secondary);
+                color: white;
+            }
+
+            .coding-projects {
+                text-align: center;
+                margin-top: 2rem;
+            }
+
+            .project-link {
+                display: inline-block;
+                background: var(--gradient);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: transform 0.3s ease;
+            }
+
+            .project-link:hover {
+                transform: scale(1.05);
+            }
+
+            /* Achievements */
+            .achievements-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .achievement-item {
+                background: white;
+                padding: 1.5rem;
+                border-radius: 15px;
+                box-shadow: var(--shadow);
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                transition: transform 0.3s ease;
+            }
+
+            .achievement-item:hover {
+                transform: translateX(10px);
+            }
+
+            .achievement-icon {
+                background: var(--success);
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            /* Hobbies */
+            .hobbies-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+
+            .hobby-item {
+                background: white;
+                padding: 1.5rem;
+                border-radius: 15px;
+                box-shadow: var(--shadow);
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                transition: transform 0.3s ease;
+                min-width: 200px;
+            }
+
+            .hobby-item:hover {
+                transform: scale(1.05);
+            }
+
+            .hobby-icon {
+                background: var(--gradient);
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Footer */
+            .footer {
+                background: var(--dark);
+                color: white;
+                padding: 3rem 0 2rem;
+                text-align: center;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .social-link {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .social-link:hover {
+                background: var(--secondary);
+                transform: translateY(-5px);
+            }
+
+            /* Back to Top */
+            .back-to-top {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                background: var(--gradient);
+                color: white;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: var(--shadow);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+
+            .back-to-top.visible {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .back-to-top:hover {
+                transform: translateY(-5px);
+            }
+
+            /* Animations */
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50%) translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(-50%) translateY(0);
+                }
+            }
+
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .nav {
+                    display: none;
+                }
+
+                .contact-info {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                }
+
+                .academics-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .skills-container {
+                    grid-template-columns: 1fr;
+                }
+
+                .main-content {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+
+                .section {
+                    margin-bottom: 3rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .hero h1 {
+                    font-size: 2rem;
+                }
+
+                .section-title {
+                    font-size: 2rem;
+                }
+
+                .academic-card,
+                .skill-category,
+                .about-content {
+                    padding: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Shubham Maloo</h1>
+                <p class="subtitle">CA Student & Aspiring Finance Professional</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>shubhammaloo0712@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mumbai, India</span>
+                    </div>
+                </div>
+                <a href="#about" class="cta-button">Explore My Journey</a>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>
+                        Seeking an Articleship position in a prestigious firm to gain practical
+                        exposure, enhance technical skills and contribute to the firm's success.
+                        Committed to delivering high quality work, continuous learning and growth.
+                    </p>
+
+                    <!-- <p>
             A dedicated Chartered Accountancy student who has successfully
             cleared the CA Intermediate examination. With a strong foundation in
             accounting, taxation, costing and financial management, I am
@@ -604,276 +601,263 @@
             passionate about applying my learning to real-world financial
             challenges and contributing to organizational success.
           </p> -->
+                </div>
+            </section>
+
+            <!-- Academic Qualifications -->
+            <section id="academics" class="section">
+                <h2 class="section-title">Academic Journey</h2>
+                <div class="academics-grid">
+                    <div class="academic-card">
+                        <h3>CA Intermediate</h3>
+                        <div class="year">May 2025</div>
+                        <p>
+                            <!-- Cleared CA Intermediate (Second Group) with [Percentage]% [xxx/300], with exemption in Costing and F.M.S.M. -->
+                            Appeared for CA Intermediate exam (Second Group - Auditing paper)
+                        </p>
+                    </div>
+                    <div class="academic-card">
+                        <h3>CA Intermediate</h3>
+                        <div class="year">January 2025</div>
+                        <p>Cleared CA Intermediate (First Group) with 52.67% [158/300]</p>
+                    </div>
+                    <div class="academic-card">
+                        <h3>CA Foundation</h3>
+                        <div class="year">December 2023</div>
+                        <p>
+                            Cleared CA Foundation with distinction scoring 71.25% [285/400],
+                            securing 94 in Mathematics and successfully passing all subjects.
+                        </p>
+                    </div>
+                    <div class="academic-card">
+                        <h3>Bachelor of Commerce (T.Y.B.Com.)</h3>
+                        <div class="year">2023 - Present</div>
+                        <p>
+                            Currently pursuing B.Com from KC College, Churchgate, specializing in
+                            Accounting and Finance. Currently in Third Year.
+                        </p>
+                    </div>
+                    <div class="academic-card">
+                        <h3>Higher Secondary (12th Grade)</h3>
+                        <div class="year">2022-23</div>
+                        <p>
+                            Completed with 89.17% [535/600] from Bhavan's College, Commerce stream
+                            with Accountancy as major subject.
+                        </p>
+                    </div>
+                    <div class="academic-card">
+                        <h3>Secondary School (10th Grade)</h3>
+                        <div class="year">2020-21</div>
+                        <p>
+                            Completed with 88.43% [619/700] from Cambridge School, with distinction
+                            in all subjects.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop"></i> Software Proficiency</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Tally ERP 9</span>
+                            <span class="skill-tag">MS Office Suite</span>
+                            <span class="skill-tag">Zoho Books</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Analytical Thinking</span>
+                            <span class="skill-tag">Attention to Detail</span>
+                            <span class="skill-tag">Time Management</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Communication Skills</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="coding-projects">
+                    <a href="https://project.shubhammaloo.xyz" target="_blank" class="project-link">
+                        <i class="fas fa-laptop-code"></i> View My Coding Projects
+                    </a>
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section id="achievements" class="section">
+                <h2 class="section-title">Key Achievements</h2>
+                <div class="achievements-list">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <strong>Cleared CA Intermediate Group 1</strong>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div>
+                            <strong>Cleared CA Foundation Examination in first attempt</strong>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <strong
+                                >Participated in State Level Ken-Ken Mathematics Competition</strong
+                            >
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <strong
+                                >Participated in International Maths Olympiad and secured 3rd
+                                position in school</strong
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hobbies and Interests -->
+            <section id="hobbies" class="section">
+                <h2 class="section-title">Hobbies & Interests</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-item">
+                        <div class="hobby-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <span>Listening Music</span>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span>Web Development</span>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <span>Gaming</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>Connect with me on professional networks</p>
+                <div class="social-links">
+                    <a
+                        href="https://www.linkedin.com/in/shubham-maloo-0029182ba"
+                        target="_blank"
+                        class="social-link"
+                    >
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a
+                        href="https://discordapp.com/users/1367141726636212234"
+                        target="_blank"
+                        class="social-link"
+                    >
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="mailto:shubhammaloo0712@gmail.com" target="_blank" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p>&copy; <span id="year"></span> Shubham Maloo. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Back to Top Button -->
+        <div class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
         </div>
-      </section>
 
-      <!-- Academic Qualifications -->
-      <section id="academics" class="section">
-        <h2 class="section-title">Academic Journey</h2>
-        <div class="academics-grid">
-          <div class="academic-card">
-            <h3>CA Intermediate</h3>
-            <div class="year">May 2025</div>
-            <p>
-              <!-- Cleared CA Intermediate (Second Group) with [Percentage]% [xxx/300], with exemption in Costing and F.M.S.M. -->
-              Appeared for CA Intermediate exam (Second Group - Auditing paper)
-            </p>
-          </div>
-          <div class="academic-card">
-            <h3>CA Intermediate</h3>
-            <div class="year">January 2025</div>
-            <p>Cleared CA Intermediate (First Group) with 52.67% [158/300]</p>
-          </div>
-          <div class="academic-card">
-            <h3>CA Foundation</h3>
-            <div class="year">December 2023</div>
-            <p>
-              Cleared CA Foundation with distinction scoring 71.25% [285/400],
-              securing 94 in Mathematics and successfully passing all subjects.
-            </p>
-          </div>
-          <div class="academic-card">
-            <h3>Bachelor of Commerce (T.Y.B.Com.)</h3>
-            <div class="year">2023 - Present</div>
-            <p>
-              Currently pursuing B.Com from KC College, Churchgate, specializing
-              in Accounting and Finance. Currently in Third Year.
-            </p>
-          </div>
-          <div class="academic-card">
-            <h3>Higher Secondary (12th Grade)</h3>
-            <div class="year">2022-23</div>
-            <p>
-              Completed with 89.17% [535/600] from Bhavan's College, Commerce
-              stream with Accountancy as major subject.
-            </p>
-          </div>
-          <div class="academic-card">
-            <h3>Secondary School (10th Grade)</h3>
-            <div class="year">2020-21</div>
-            <p>
-              Completed with 88.43% [619/700] from Cambridge School, with
-              distinction in all subjects.
-            </p>
-          </div>
-        </div>
-      </section>
+        <script>
+            // Set current year
+            document.getElementById('year').textContent = new Date().getFullYear();
 
-      <!-- Skills Section -->
-      <section id="skills" class="section">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3><i class="fas fa-laptop"></i> Software Proficiency</h3>
-            <div class="skills-list">
-              <span class="skill-tag">Tally ERP 9</span>
-              <span class="skill-tag">MS Office Suite</span>
-              <span class="skill-tag">Zoho Books</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3><i class="fas fa-brain"></i> Soft Skills</h3>
-            <div class="skills-list">
-              <span class="skill-tag">Analytical Thinking</span>
-              <span class="skill-tag">Attention to Detail</span>
-              <span class="skill-tag">Time Management</span>
-              <span class="skill-tag">Problem Solving</span>
-              <span class="skill-tag">Communication Skills</span>
-            </div>
-          </div>
-        </div>
-        <div class="coding-projects">
-          <a
-            href="https://project.shubhammaloo.xyz"
-            target="_blank"
-            class="project-link"
-          >
-            <i class="fas fa-laptop-code"></i> View My Coding Projects
-          </a>
-        </div>
-      </section>
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px',
+            };
 
-      <!-- Achievements -->
-      <section id="achievements" class="section">
-        <h2 class="section-title">Key Achievements</h2>
-        <div class="achievements-list">
-          <div class="achievement-item">
-            <div class="achievement-icon">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <div>
-              <strong>Cleared CA Intermediate Group 1</strong>
-            </div>
-          </div>
-          <div class="achievement-item">
-            <div class="achievement-icon">
-              <i class="fas fa-medal"></i>
-            </div>
-            <div>
-              <strong
-                >Cleared CA Foundation Examination in first attempt</strong
-              >
-            </div>
-          </div>
-          <div class="achievement-item">
-            <div class="achievement-icon">
-              <i class="fas fa-award"></i>
-            </div>
-            <div>
-              <strong
-                >Participated in State Level Ken-Ken Mathematics
-                Competition</strong
-              >
-            </div>
-          </div>
-          <div class="achievement-item">
-            <div class="achievement-icon">
-              <i class="fas fa-star"></i>
-            </div>
-            <div>
-              <strong
-                >Participated in International Maths Olympiad and secured 3rd
-                position in school</strong
-              >
-            </div>
-          </div>
-        </div>
-      </section>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
 
-      <!-- Hobbies and Interests -->
-      <section id="hobbies" class="section">
-        <h2 class="section-title">Hobbies & Interests</h2>
-        <div class="hobbies-grid">
-          <div class="hobby-item">
-            <div class="hobby-icon">
-              <i class="fas fa-headphones"></i>
-            </div>
-            <span>Listening Music</span>
-          </div>
-          <div class="hobby-item">
-            <div class="hobby-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <span>Web Development</span>
-          </div>
-          <div class="hobby-item">
-            <div class="hobby-icon">
-              <i class="fab fa-node-js"></i>
-            </div>
-            <span>Node.js</span>
-          </div>
-          <div class="hobby-item">
-            <div class="hobby-icon">
-              <i class="fas fa-gamepad"></i>
-            </div>
-            <span>Gaming</span>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>Connect with me on professional networks</p>
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/shubham-maloo-0029182ba"
-            target="_blank"
-            class="social-link"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://discordapp.com/users/1367141726636212234"
-            target="_blank"
-            class="social-link"
-          >
-            <i class="fab fa-discord"></i>
-          </a>
-          <a
-            href="mailto:shubhammaloo0712@gmail.com"
-            target="_blank"
-            class="social-link"
-          >
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-        <p>
-          &copy; <span id="year"></span> Shubham Maloo. All rights reserved.
-        </p>
-      </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-      <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <script>
-      // Set current year
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Intersection Observer for animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, observerOptions);
-
-      // Observe all sections
-      document.querySelectorAll(".section").forEach((section) => {
-        observer.observe(section);
-      });
-
-      // Back to top button
-      const backToTopBtn = document.getElementById("backToTop");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          backToTopBtn.classList.add("visible");
-        } else {
-          backToTopBtn.classList.remove("visible");
-        }
-      });
-
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
+            // Observe all sections
+            document.querySelectorAll('.section').forEach((section) => {
+                observer.observe(section);
             });
-          }
-        });
-      });
 
-      // Add scroll effect to navigation
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector(".nav");
-        if (window.pageYOffset > 100) {
-          nav.style.background = "rgba(15, 23, 42, 0.9)";
-        } else {
-          nav.style.background = "rgba(255, 255, 255, 0.1)";
-        }
-      });
-    </script>
-  </body>
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                        });
+                    }
+                });
+            });
+
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('.nav');
+                if (window.pageYOffset > 100) {
+                    nav.style.background = 'rgba(15, 23, 42, 0.9)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.1)';
+                }
+            });
+        </script>
+    </body>
 </html>
