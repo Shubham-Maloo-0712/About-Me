@@ -230,6 +230,99 @@
                 color: var(--gray);
             }
 
+            /* Work Experience Section */
+            .experience-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+            }
+
+            .experience-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: var(--shadow);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border-left: 4px solid var(--accent);
+                position: relative;
+            }
+
+            .experience-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+
+            .experience-card h3 {
+                color: var(--primary);
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .experience-card .company {
+                color: var(--accent);
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .experience-card .duration {
+                color: var(--gray);
+                font-weight: 500;
+                margin-bottom: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .experience-card .location {
+                color: var(--gray);
+                margin-bottom: 1rem;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .experience-card ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .experience-card ul li {
+                color: var(--gray);
+                line-height: 1.6;
+                margin-bottom: 0.5rem;
+                position: relative;
+                padding-left: 1.5rem;
+            }
+
+            .experience-card ul li::before {
+                content: '▸';
+                color: var(--accent);
+                position: absolute;
+                left: 0;
+                font-weight: bold;
+            }
+
+            .no-experience {
+                background: white;
+                padding: 3rem;
+                border-radius: 20px;
+                box-shadow: var(--shadow);
+                text-align: center;
+                color: var(--gray);
+                border: 2px dashed var(--secondary);
+            }
+
+            .no-experience i {
+                font-size: 3rem;
+                color: var(--secondary);
+                margin-bottom: 1rem;
+            }
+
+            .no-experience h3 {
+                color: var(--primary);
+                margin-bottom: 1rem;
+            }
+
             /* Academics Grid */
             .academics-grid {
                 display: grid;
@@ -509,7 +602,8 @@
                     gap: 1rem;
                 }
 
-                .academics-grid {
+                .academics-grid,
+                .experience-grid {
                     grid-template-columns: 1fr;
                 }
 
@@ -537,6 +631,7 @@
                 }
 
                 .academic-card,
+                .experience-card,
                 .skill-category,
                 .about-content {
                     padding: 1.5rem;
@@ -549,6 +644,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#academics">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#achievements">Achievements</a></li>
@@ -594,6 +690,29 @@
                         applying my learning to real-world financial challenges and contributing to
                         organizational success.
                     </p>
+                </div>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Work Experience</h2>
+
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <h3>CA Articleship Trainee</h3>
+                        <div class="company">KKC & Associates</div>
+                        <div class="duration">July 2025 – Present</div>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Mumbai, India
+                        </div>
+                        <ul>
+                            <li>
+                                Assist in statutory audit engagements for clients across bankng and
+                                finance sector.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
